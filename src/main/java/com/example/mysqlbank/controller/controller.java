@@ -41,6 +41,7 @@ public class controller
         customer.setC_BALANCE(customer.getC_BALANCE());
         result =  customerService.save(customer);
         if(result.equalsIgnoreCase("success"))
+            transaction.setC_ID(customer.getC_Id());
             transaction.setT_AMOUNT(customer.getC_BALANCE());
             transaction.setT_DATE_TIME();
             transactionService.save(transaction);
@@ -55,7 +56,6 @@ public class controller
     public @ResponseBody
     String deposit (
             @ModelAttribute Customer customer
-
     ) {
         Customer myCustomer = customerService.findById(customer.getC_Id());
         Transaction myTransaction = new Transaction();
@@ -63,6 +63,7 @@ public class controller
             if(myCustomer!=null){
                 myCustomer.deposit(customer.getC_BALANCE());
                 customerService.save(myCustomer);
+                myTransaction.setC_ID(customer.getC_Id());
                 myTransaction.setT_AMOUNT(customer.getC_BALANCE());
                 myTransaction.setT_DATE_TIME();
                 transactionService.save(myTransaction);
@@ -91,6 +92,7 @@ public class controller
                 isSuccess = myCustomer.withdraw(customer.getC_BALANCE());
                 if(isSuccess){
                     customerService.save(myCustomer);
+                    myTransaction.setC_ID(customer.getC_Id());
                     myTransaction.setT_AMOUNT(customer.getC_BALANCE());
                     myTransaction.setT_DATE_TIME();
                     transactionService.save(myTransaction);

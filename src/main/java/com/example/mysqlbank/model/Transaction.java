@@ -10,6 +10,18 @@ public class Transaction {
     private Long T_ID;
     private Timestamp T_DATE_TIME;
     private Long T_AMOUNT;
+    private Long C_ID;
+
+
+
+
+    public Long getC_ID() {
+        return C_ID;
+    }
+
+    public void setC_ID(Long c_ID) {
+        C_ID = c_ID;
+    }
 
     public Long getT_ID() {
         return T_ID;

@@ -22,14 +22,17 @@
 
         <thead>
         <tr>
-            <th>ID</th>
+            <th>Transaction Id</th>
+            <th>Customer Id</th>
             <th>Amount</th>
             <th>Date Time</th>
+
         </tr>
         </thead>
         <tbody>
         <tr th:each="transaction: ${transactions}">
             <td th:text="${transaction.T_ID}" />
+            <td th:text="${transaction.C_ID}" />
             <td th:text="${transaction.T_AMOUNT}" />
             <td th:text="${transaction.T_DATE_TIME}" />
 

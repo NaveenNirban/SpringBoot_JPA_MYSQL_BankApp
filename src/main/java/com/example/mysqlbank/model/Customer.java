@@ -9,13 +9,8 @@ public class Customer {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long C_Id;
-
-
     private String C_NAME;
     private Long C_BALANCE;
-
-
-
 
 
     public Long getC_Id() {
@@ -41,6 +36,7 @@ public class Customer {
     public void setC_BALANCE(Long c_BALANCE) {
         C_BALANCE = c_BALANCE;
     }
+
 
     public void deposit(Long amount){
        Long balance = this.getC_BALANCE();
