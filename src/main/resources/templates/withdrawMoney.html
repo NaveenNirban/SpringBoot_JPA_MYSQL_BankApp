@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Withdraw</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+</head>
+<body>
+
+<div class="container">
+
+    <h3>Withdraw Money</h3>
+    <hr/>
+
+    <form th:action="@{/withdraw}" th:object="${customer}" method="POST">
+
+    <input type="text" th:field="*{C_Id}" class="form-control col-4 mb-4" placeholder="Enter ID" />
+
+    <input type="text"  th:field="*{C_BALANCE}" class="form-control col-4 mb-4" placeholder="Enter Amount" />
+
+    <button type="submit" class="btn btn-primary col-2">Save</button>
+    </form>
+    <!--  </form>-->
+    <hr/>
+    <!--<a th:href="@{/list}">Back to list</a>-->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Bank App</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>Welcome to Bank App</h3>
+
+    <hr/>
+    <a th:href="@{/addCustomer}" class="btn btn-primary">Add Customer</a>
+    <a th:href="@{/showTransaction}" class="btn btn-primary">Show Transactions</a>
+    <a th:href="@{/withdrawMoney}" class="btn btn-primary">Withdraw Money</a>
+    <a th:href="@{/showBalance}" class="btn btn-primary">Show Money</a>
+    <a th:href="@{/depositMoney}" class="btn btn-primary">Deposit Money</a>
+    <br/><br/>
+
+</div>
+
+
+</body>
+
+</html>
